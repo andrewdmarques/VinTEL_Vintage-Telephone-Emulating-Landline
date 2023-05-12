@@ -1,0 +1,30 @@
+variable,directory,pin,type,name,description,command_off,command_on
+dir_main,/home/pi/Desktop/VinTEL,,,,,,
+dir_numbers,/home/pi/Desktop/VinTEL/Numbers,,,,,,
+dir_bin,/home/pi/Desktop/VinTEL/Bin,,,,,,
+dir_status,/home/pi/Desktop/VinTEL/Bin/Status,,,,,,
+dir_scripts,/home/pi/Desktop/VinTEL/Bin/Scripts,,,,,,
+dir_effects,/home/pi/Desktop/VinTEL/Bin/Sound-Effects,,,,,,
+dir_dial,/home/pi/Desktop/VinTEL/Bin/Status/Dial,,,,,,
+dir_audio,/home/pi/Desktop/VinTEL/Audio,,,,,,
+dir_skits,/home/pi/Desktop/VinTEL/Bin/Skits,,,,,,
+,,5,out,led-1,system status,,
+,,11,out,led-2,incoming call,,
+,,9,out,led-3,hook and dial,,
+,,10,out,led-4,motion detected,,
+,,22,out,led-5,5 cent,,
+,,27,out,led-6,10 cent,,
+,,17,out,led-7,25 cent,,
+,,26,in,toggle-1,main power,touch dir_status/main-on.txt; rm dir_status/main-on.txt; echo $(date) > dir_status/main-off.txt,touch dir_status/main-off.txt ; rm dir_status/main-off.txt; echo $(date) > dir_status/main-on.txt
+,,19,in,toggle-2,allow incoming calls from motion sensor,touch dir_status/motion-on.txt; rm dir_status/motion-on.txt; echo $(date) > dir_status/motion-off.txt,touch dir_status/motion-off.txt ; rm dir_status/motion-off.txt; echo $(date) > dir_status/motion-on.txt
+,,13,in,toggle-3,allow free calls,touch dir_status/free-on.txt; rm dir_status/free-on.txt; echo $(date) > dir_status/free-off.txt,touch dir_status/free-off.txt ; rm dir_status/free-off.txt; echo $(date) > dir_status/free-on.txt
+,,6,in,toggle-4,call volume high or low,touch dir_status/volume-high.txt; rm dir_status/volume-high.txt; echo $(date) > dir_status/volume-low.txt,touch dir_status/volume-low.txt ; rm dir_status/volume-low.txt; echo $(date) > dir_status/volume-high.txt
+,,18,out,relay-bell,ring the mechanical bell,,
+,,23,in,button-1,system reset button,,sudo /sbin/reboot
+,,24,in,button-2,force call button,,echo $(date) > dir_status/call-initiated.txt
+,,12,in,sensor-1,motion sensor,,echo $(date) > dir_status/detected-motion.txt
+,,2,in,sensor-2,5 cent sensor,,echo $(date) > dir_status/detected-5-cent.txt
+,,3,in,sensor-3,10 cent sensor,,echo $(date) > dir_status/detected-10-cent.txt
+,,4,in,sensor-4,25 cent sensor,,echo $(date) > dir_status/detected-25-cent.txt
+,,25,in,sensor-5,phone hook sensor,touch dir_status/hook-on.txt; rm dir_status/hook-on.txt; echo $(date) > dir_status/hook-off.txt,touch dir_status/hook-off.txt ; rm dir_status/hook-off.txt; echo $(date) > dir_status/hook-on.txt
+,,8,in,sensor-6,dial sensor,"echo $(date) > ""dir_dial/dial-on-$(date +""%H-%M-%S-%2N"").txt""",
