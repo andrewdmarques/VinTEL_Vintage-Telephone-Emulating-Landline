@@ -1,6 +1,6 @@
 # VinTEL
 
-VinTEL is an interactive telephone conversation simulator designed for educational purposes. It utilizes Raspberry Pi, GPIO, and various hardware components to create a realistic telephone experience.
+VinTEL (Vintagle Telephone Emulating Landline) is an interactive telephone conversation simulator designed for educational purposes. It uses Raspberry Pi, GPIO, and various hardware components to create a realistic telephone experience.
 
 ## Features
 
