@@ -9,6 +9,7 @@ VinTEL (Vintagle Telephone Emulating Landline) is an interactive telephone conve
 - Detects motion events to trigger phone interactions
 - Indicates system status using an LED indicator
 - Allows user interaction through handset pickup and dialing
+- Detailed reports including usage statistics
 
 ## Hardware Requirements
 
