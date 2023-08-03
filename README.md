@@ -49,6 +49,9 @@ sudo apt update
 sudo apt install htop
 sudo apt install thonny
 sudo apt install firefox-esr
+sudo apt-get install sox
+sudo apt-get install ffmpeg
+pip3 install pydub
 pip3 install PySimpleGUI
 ```
 
@@ -72,11 +75,15 @@ Add the following lines to the crontab file:
 @reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/coins.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-coins.txt
 @reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/controller.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-controller.txt
 @reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/dialer.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-dialer.txt
-#@reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/led-controller.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-led-controller.txt
+@reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/led-controller.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-led-controller.txt
 @reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/motion-controller.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-motion-controller.txt
 @reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/skit-player.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-skit-player.txt
 @reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/skit-selector.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-skit-selector.txt
 @reboot /home/pi/Desktop/VinTEL/Bin/Scripts/player.sh 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-bash-player.txt
+@reboot /home/pi/Desktop/VinTEL/Bin/Scripts/player2.sh 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-bash-player2.txt
+@reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/activity-logger2.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-activity-logger2.txt
+@reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/backup.py > /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-backup.txt 2>&1
+#@reboot /home/pi/Desktop/temp.sh > /home/pi/Desktop/log-temp.txt 2>&1
 ```
 Save the crontab file and exit.
 
