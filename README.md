@@ -57,10 +57,10 @@ pip3 install PySimpleGUI
 
 ### 3. Make Scripts Executable
 
-Move the VinTEL system files to the `/home/pi/Desktop/VinTEL/Bin/Scripts/` directory and make them executable by running the following commands:
+Move the VinTEL system files to the `/home/pi/Desktop/VinTEL/OS/Scripts/` directory and make them executable by running the following commands:
 ```
-chmod +x /home/pi/Desktop/VinTEL/Bin/Scripts/.py
-chmod +x /home/pi/Desktop/VinTEL/Bin/Scripts/.sh
+chmod +x /home/pi/Desktop/VinTEL/OS/Scripts/.py
+chmod +x /home/pi/Desktop/VinTEL/OS/Scripts/.sh
 ```
 ### 4. Set Up Cron Jobs
 
@@ -71,18 +71,18 @@ crontab -e
 
 Add the following lines to the crontab file:
 ```
-@reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/audio-selector.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-audio-selector.txt
-@reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/coins.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-coins.txt
-@reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/controller.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-controller.txt
-@reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/dialer.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-dialer.txt
-@reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/led-controller.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-led-controller.txt
-@reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/motion-controller.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-motion-controller.txt
-@reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/skit-player.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-skit-player.txt
-@reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/skit-selector.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-skit-selector.txt
-@reboot /home/pi/Desktop/VinTEL/Bin/Scripts/player.sh 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-bash-player.txt
-@reboot /home/pi/Desktop/VinTEL/Bin/Scripts/player2.sh 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-bash-player2.txt
-@reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/activity-logger2.py 1> /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-activity-logger2.txt
-@reboot python3 /home/pi/Desktop/VinTEL/Bin/Scripts/backup.py > /home/pi/Desktop/VinTEL/Bin/Status/Logs/log-backup.txt 2>&1
+@reboot python3 /home/pi/Desktop/VinTEL/OS/Scripts/audio-selector.py 1> /home/pi/Desktop/VinTEL/OS/Status/Logs/log-audio-selector.txt
+@reboot python3 /home/pi/Desktop/VinTEL/OS/Scripts/coins.py 1> /home/pi/Desktop/VinTEL/OS/Status/Logs/log-coins.txt
+@reboot python3 /home/pi/Desktop/VinTEL/OS/Scripts/controller.py 1> /home/pi/Desktop/VinTEL/OS/Status/Logs/log-controller.txt
+@reboot python3 /home/pi/Desktop/VinTEL/OS/Scripts/dialer.py 1> /home/pi/Desktop/VinTEL/OS/Status/Logs/log-dialer.txt
+@reboot python3 /home/pi/Desktop/VinTEL/OS/Scripts/led-controller.py 1> /home/pi/Desktop/VinTEL/OS/Status/Logs/log-led-controller.txt
+@reboot python3 /home/pi/Desktop/VinTEL/OS/Scripts/motion-controller.py 1> /home/pi/Desktop/VinTEL/OS/Status/Logs/log-motion-controller.txt
+@reboot python3 /home/pi/Desktop/VinTEL/OS/Scripts/skit-player.py 1> /home/pi/Desktop/VinTEL/OS/Status/Logs/log-skit-player.txt
+@reboot python3 /home/pi/Desktop/VinTEL/OS/Scripts/skit-selector.py 1> /home/pi/Desktop/VinTEL/OS/Status/Logs/log-skit-selector.txt
+@reboot /home/pi/Desktop/VinTEL/OS/Scripts/player.sh 1> /home/pi/Desktop/VinTEL/OS/Status/Logs/log-bash-player.txt
+@reboot /home/pi/Desktop/VinTEL/OS/Scripts/player2.sh 1> /home/pi/Desktop/VinTEL/OS/Status/Logs/log-bash-player2.txt
+@reboot python3 /home/pi/Desktop/VinTEL/OS/Scripts/activity-logger2.py 1> /home/pi/Desktop/VinTEL/OS/Status/Logs/log-activity-logger2.txt
+@reboot python3 /home/pi/Desktop/VinTEL/OS/Scripts/backup.py > /home/pi/Desktop/VinTEL/OS/Status/Logs/log-backup.txt 2>&1
 #@reboot /home/pi/Desktop/temp.sh > /home/pi/Desktop/log-temp.txt 2>&1
 ```
 Save the crontab file and exit.
@@ -105,15 +105,15 @@ Add any audio files that you would like to include in the VinTEL system. Follow 
 
 1. Connect the necessary hardware components, such as the handset, LED, and motion sensor, to the Raspberry Pi following the circuit diagrams.
 2. Make sure the VinTEL system is properly powered.
-3. Turn on the main switch indicated by `main-on.txt` in the `/home/pi/Desktop/VinTEL/Bin/Status` directory.
+3. Turn on the main switch indicated by `main-on.txt` in the `/home/pi/Desktop/VinTEL/OS/Status` directory.
 4. Interact with the VinTEL system by picking up the handset, dialing numbers, or triggering motion events according to the configured skits.
 
 Refer to the detailed README file in each script's directory for more specific instructions on their usage.
 
 ## Important File Descriptions
 
-- `Bin/Scripts`: Contains the main system scripts and the `configure.csv` file for system configuration.
-- `Bin/Status`: Stores the status files indicating various system states.
+- `OS/Scripts`: Contains the main system scripts and the `configure.csv` file for system configuration.
+- `OS/Status`: Stores the status files indicating various system states.
   - `main-on.txt`: Indicates that the main switch is toggled to the on position.
   - `hook-on.txt`: Indicates that the handset was picked up and the hook is toggled to the on position.
   - `hook-off.txt`: Indicates that the handset was placed down and the hook is toggled to the off position.
@@ -124,9 +124,9 @@ Refer to the detailed README file in each script's directory for more specific i
   - `call-initiated.txt`: Indicates that a docent-triggered call has been initiated.
   - `call-initiated-unattended.txt`: Indicates that a motion sensor-triggered call has been initiated.
   - `system-working.txt`: Indicates the system status during skit playback.
-- `Bin/Effects`: Contains audio effects and prompts used in skits.
-- `Bin/Skits`: Holds the CSV files defining different skits and their sequences.
-- `Bin/Audio`: Stores the audio files used in skits and prompts.
+- `OS/Effects`: Contains audio effects and prompts used in skits.
+- `OS/Skits`: Holds the CSV files defining different skits and their sequences.
+- `OS/Audio`: Stores the audio files used in skits and prompts.
 - `Hardware/Schematics`: Contains detailed circuit diagrams and wiring instructions for hardware components.
 - `README.md`: Provides information about the VinTEL system and its setup.
 - `LICENSE`: The license under which the VinTEL system is distributed.
@@ -162,7 +162,7 @@ The directory structure of the VinTEL system is as follows:
 
 ```
 VinTEL
-├── Bin
+├── OS
 │   ├── Scripts
 │   │   ├── audio-selector.py
 │   │   ├── coins.py
